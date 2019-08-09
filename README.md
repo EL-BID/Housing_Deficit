@@ -34,8 +34,10 @@ The night lights data originally used to create these scripts was obtained from 
 
 In combination with the NDC shapefiles, the results of the Indiactors.R script and the Predictions.R script can be visualized in QGIS (or similar software), or directly in R, to produce a heat map of deficit that is easily understandable at a glance. 
 
-<img align="right" width="200" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/2012map.JPG">
-<img align="right" width="200" height="49" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/2019map.JPG">
+
+<img align="left" width="300" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/2012map.JPG">
+<img align="right" width="300" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/2019map.JPG">
+
 
 
 ## Installation Guide
