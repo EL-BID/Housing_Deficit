@@ -27,6 +27,9 @@ A household is considered to be experiencing qualitative housing deficit if any 
    7. Access to sanitary garbage disposal
 
 
+A simple regression is then used to the predict calculated housing deficit based on the average luminosity of each administrative division, with robust results in Guyana's case. 
+
+
 ## User Guide
 Adustments to the indicators above should be considered depending on the census data to which it is applied. For example, flooring material is an important indicator of housing quality, but Guyana's census does not collect this information. If this this methodology is applied to a dataset in which floor material data is available, it should be taken into account. 
 
@@ -65,7 +68,7 @@ Questions or suggestions about this project can be directed to Jordan Fischer at
 ## Authors
 Code:  [Jordan Jasuta Fischer](https://github.com/jordanjasuta)
 
-Methodology: [Camilo Pecha]
+Methodology: Camilo Pecha
 
 ## License
 The Documentation of Support and Use of the software is licensed under Creative Commons IGO 3.0 Attribution-NonCommercial-NoDerivative (CC-IGO 3.0 BY-NC-ND)
