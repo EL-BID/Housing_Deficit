@@ -1,6 +1,6 @@
 <img align="right" width="115" height="49" src="https://github.com/EL-BID/Modelo-de-prediccion-de-crecimiento-urbano-/blob/master/img/IDB_logo.jpg">
 
-# Housing_Deficit
+# Housing Deficit Estimation
 
 ## Description and Context
 Understanding housing deficit is crucial in creating housing policy. The code contained in this repo will apply a decisive methodology to determine levels of quantitative, qualitative, and total housing deficit based on census data, using Guyana's census data as an example. An association analysis is applied to indicators causing deficit to highlight patterns among sub-optimal conditions - for example, Guyanese households lacking access to electricity are 64% more likely to also lack adequate sewerage, suggesting that lack of access to utilities and infrastructure often go hand-in-hand. 
@@ -40,8 +40,8 @@ In combination with the NDC shapefiles, the results of the Indiactors.R script a
 </p>
 
 
-![Hotspot analysis overlaid on existing land use map](https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/Qualitative%20Deficit%202012.pdf)
-![Hotspot analysis overlaid on existing land use map](https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/Qualitative%20Deficit%202019.pdf)
+![Housing deficit by NDC, 2012](https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/2012map.JPG "Housing deficit by NDC, 2012")
+![Predicted housing deficit by NDC, 2019](https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/2019map.JPG "Predicted housing deficit by NDC, 2019")
 
 
 ## Installation Guide
