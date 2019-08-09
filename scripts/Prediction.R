@@ -29,13 +29,6 @@ night2019_indicators <- merge(HousingDef, night2019, by.x = "NDCno", by.y = "ndc
 # This excercise generates the parameters needed from 2012 data to predict the deficits using data from 2019.
 # This excercise follows the methodology proposed by Henderson et.al 2012, and World Bank 2015 (Ukraine)
 
-# The dofile goes as follows:
-#   1. model is estimated:  deficit_2012=b0+b1*(nightlight_2012)+e 
-#      where estimation of b0 and b1 and the prediction of e are obtained
-#   2. using 2019 data, 2019 predictions are found using:  deficit_2019=b0_2012+b1_2012*(nightlight_2019)+e_2019
-#      These estimates are contrasted with 2012 data to check goodness of fit, and then used to plot a map.
-
-
 
 # Models
 
