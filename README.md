@@ -36,7 +36,9 @@ In combination with the NDC shapefiles, the results of the Indiactors.R script a
   <img width="400" src="https://github.com/EL-BID/Modelo-de-prediccion-de-crecimiento-urbano-/blob/master/img/transport.png">
 </p>
 
-![Hotspot analysis overlaid on existing land use map](https://github.com/EL-BID/Modelo-de-prediccion-de-crecimiento-urbano-/blob/master/img/scenarios_hotspots.png "Hotspot analysis overlaid on existing land use map")
+
+![Hotspot analysis overlaid on existing land use map](https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/Qualitative%20Deficit%202012.pdf "Hotspot analysis overlaid on existing land use map")
+![Hotspot analysis overlaid on existing land use map](https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/Qualitative%20Deficit%202019.pdf "Hotspot analysis overlaid on existing land use map")
 
 
 ## Installation Guide
