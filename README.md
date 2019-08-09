@@ -38,8 +38,8 @@ In combination with the NDC shapefiles, the results of the Indiactors.R script a
 <img align="left" width="400" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/2012map.JPG">
 <img align="right" width="400" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/2019map.JPG">
 
+<br/><br/><br/><br/><br/>
 
-<br/>
 ## Installation Guide
 The scripts in this repo can be run from R/Rstudio after adjusting the paths of input files. As previously mentioned, QGIS or similar software will be necessary to extract the night lights raster data from the satellite images. 
 
