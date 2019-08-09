@@ -4,7 +4,10 @@
 
 ## Description and Context
 Understanding housing deficit is crucial in creating housing policy. The code contained in this repo will apply a decisive methodology to determine levels of quantitative, qualitative, and total housing deficit based on census data, using Guyana's census data as an example. An association analysis is applied to indicators causing deficit to highlight patterns among sub-optimal conditions - for example, Guyanese households lacking access to electricity are 64% more likely to also lack adequate sewerage, suggesting that lack of access to utilities and infrastructure often go hand-in-hand. 
-![Association analysis of sub-optimal housing conditions in Guyana](https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/AAgraph.JPG "Association analysis of sub-optimal housing conditions in Guyana")
+
+<p align="center">
+  <img width="400" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/AAgraph.JPG">
+</p>
 
 In data-scarce environments reliable nation-wide data on housing conditions might only be available once a decade. To overcome this, the repo contains an additional script that will use night lights data extracted from satellite images in order to predict the housing deficit in years where no census data is available.
 
@@ -33,7 +36,7 @@ In combination with the NDC shapefiles, the results of the Indiactors.R script a
 
 
 <p align="center">
-  <img width="400" src="https://github.com/EL-BID/Modelo-de-prediccion-de-crecimiento-urbano-/blob/master/img/transport.png">
+  <img width="400" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/Qualitative%20Deficit%202012.pdf">
 </p>
 
 
@@ -48,10 +51,15 @@ The scripts in this repo can be run from R/Rstudio after adjusting the paths of 
 All input data should be housed in the same folder with the R scripts. The working directories set at the beginning of each script should ensure that the files are located by R when indicated. 
 
 In addition to the basic R/Rstudio software, which must be installed before the scripts can be opened or run, the following modules will be installed in the process of running the scripts:
+
 `<readstata13>`   *this is necessary to read Guyana's census data; this may not be necessary for other census data* 
+
 `<tidyverse>`     *if the install of this package fails, you may need to update your version of R* 
+
 `<arules>`
+
 `<arulesViz>`
+
 `<ggplot2>`
 
 
@@ -60,6 +68,7 @@ Questions or suggestions about this project can be directed to Jordan Fischer at
 
 ## Authors
 Code:  [Jordan Jasuta Fischer](https://github.com/jordanjasuta)
+
 Methodology: [Camilo Pecha]
 
 ## License
