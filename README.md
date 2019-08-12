@@ -68,7 +68,7 @@ Questions or suggestions about this project can be directed to Jordan Fischer at
 ## Authors
 Code:  [Jordan Jasuta Fischer](https://github.com/jordanjasuta)
 
-Methodology: Camilo Pecha
+Methodology: [Camilo Pecha](http://camilopecha.webflow.io)
 
 ## License
 The Documentation of Support and Use of the software is licensed under Creative Commons IGO 3.0 Attribution-NonCommercial-NoDerivative (CC-IGO 3.0 BY-NC-ND)
