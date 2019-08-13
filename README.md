@@ -51,9 +51,9 @@ All input data should be housed in the same folder with the R scripts. The worki
 
 In addition to the basic R/Rstudio software, which must be installed before the scripts can be opened or run, the following modules will be installed in the process of running the scripts:
 
-`<readstata13>`   *this is necessary to read Guyana's census data; this may not be necessary for other census data* 
+`<readstata13>`   *...this is necessary to read Guyana's census data; this may not be necessary for other census data* 
 
-`<tidyverse>`     *if the install of this package fails, you may need to update your version of R* 
+`<tidyverse>`     *...if the install of this package fails, you may need to update your version of R* 
 
 `<arules>`
 
