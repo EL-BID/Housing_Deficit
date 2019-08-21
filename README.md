@@ -73,7 +73,7 @@ Methodology: [Camilo Pecha](http://camilopecha.webflow.io)
 ## License
 The Documentation of Support and Use of the software is licensed under Creative Commons IGO 3.0 Attribution-NonCommercial-NoDerivative (CC-IGO 3.0 BY-NC-ND)
 
-The codebase of this repo uses [AM-331-A3 Software License](LICENSE).
+The codebase of this repo uses [AM-331-A3 Software License](https://github.com/IDB-HUD/Housing_Deficit/blob/master/LICENSE.md).
 
 ## Limitation of responsibilities
 The IDB is not responsible, under any circumstance, for damage or compensation, moral or patrimonial; direct or indirect; accessory or special; or by way of consequence, foreseen or unforeseen, that could arise:
