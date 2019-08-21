@@ -39,7 +39,7 @@ In combination with the NDC shapefiles, the results of the Indiactors.R script a
 
 
 <p align="center">
-  <img width="700" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/HousindDeficitMaps.JPG">
+  <img width="800" src="https://github.com/EL-BID/Housing_Deficit/blob/master/images/Def_Estimation.JPG">
 </p>
 
 
