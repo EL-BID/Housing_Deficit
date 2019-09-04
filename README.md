@@ -11,7 +11,7 @@ Understanding housing deficit is crucial in creating housing policy. The code co
 
 In data-scarce environments reliable nation-wide data on housing conditions might only be available once a decade. To overcome this, the repo contains an additional script that will use night lights data extracted from satellite images in order to predict the housing deficit in years where no census data is available.
 
-More information on the methodology can be found at ______. In brief:
+More information on the methodology can be found in the [Methodological Report](https://github.com/EL-BID/Housing_Deficit/blob/master/Methodological%20Report%20-%20Housing%20Deficit%20Estimation.pdf). In brief:
 
 A household is considered to be experiencing quantitative housing deficit if they are living in either...
    1. Cohabitation (> 1 household living in the same dwelling)
