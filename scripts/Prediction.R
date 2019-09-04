@@ -1,7 +1,7 @@
 
 ### Housing Deficit Estimation: predictions
 
-# This dofile predicts qualitative and total housing deficit. Qualitative and total housing deficit are combined
+# This script predicts qualitative and total housing deficit. Qualitative and total housing deficit are combined
 # with the nightlight data from the NASAS's VIIRS program for 2012 and 2019. All predictions are by NDC, for a 
 # total of 115 observations.
 
