@@ -42,6 +42,8 @@ b0 <- fit$coefficients[1]
 b1 <- fit$coefficients[2]
 ##     --> predict 2019 total deficit
 night2019_indicators$predict_total_def_19 <- b0 + b1*night2019_indicators$meanDN + night2019_indicators$errors_totaldef
+night2019_indicators$predict_total_def_19[night2019_indicators$predict_total_def_19 < 0] <- 0   #reassign values <0 to equal 0, since there cannot be negative deficit 
+
 
 
 ## Regress QUALITATIVE deficit against luminosity in 2012
@@ -54,6 +56,7 @@ b0_q <- fit_q$coefficients[1]
 b1_q <- fit_q$coefficients[2]
 ##     --> predict 2019 qualitative deficit
 night2019_indicators$predict_qual_def_19 <- b0_q + b1_q*night2019_indicators$meanDN + night2019_indicators$errors_qualdef
+night2019_indicators$predict_qual_def_19[night2019_indicators$predict_qual_def_19 < 0] <- 0   #reassign values <0 to equal 0, since there cannot be negative deficit 
 
 
 # check goodness of fit
@@ -65,6 +68,42 @@ ggplot(night2019_indicators, aes(NDCno)) + theme_classic() +
   ggtitle("Total Housing Deficit") +
   theme(plot.title = element_text(hjust = 0.5)) + 
   theme(legend.position="bottom")
+
+
+
+#write final dataset to csv
+write.csv(night2019_indicators, file = "[path]\\2019_pred_all.csv", row.names=FALSE)
+
+
+
+# ---------- create table by NDC ---------- # 
+
+if (!require("tidyverse")) install.packages("tidyverse")   #if this installation fails you may need to update R
+library(tidyverse)
+#install.packages("installr"); library(installr) # install+load installr
+#updateR() # updating R.
+
+indicators_table <- night2019_indicators %>% 
+  group_by(NDCno) %>% 
+  summarise(total_h = sum(total_h), 
+            total_no_def = mean(total_no_def), 
+            total_def = mean(total_def), 
+            def_quali = mean(def_quali),
+            def_wall_mat = mean(def_wall_mat),
+            def_roof_mat = mean(def_roof_mat),
+            overcrowding = mean(overcrowding), 
+            def_water_acc = mean(def_water_acc),
+            def_sewar_acc = mean(def_sewar_acc), 
+            def_light_acc = mean(def_light_acc),
+            def_garba_acc = mean(def_garba_acc),
+            pred_total_def = mean(predict_total_def_19),
+            pred_qual_def = mean(predict_qual_def_19))
+
+#write table to csv
+write.csv(indicators_table, file = "[path]\\2019_precitions_by_NDC.csv", row.names=FALSE)
+
+
+
 
 
 
