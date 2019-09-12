@@ -42,6 +42,8 @@ In combination with the NDC shapefiles, the results of the Indiactors.R script a
   <img width="800" src="https://github.com/EL-BID/Housing_Deficit/blob/master/images/Def_Estimation.JPG">
 </p>
 
+Detailed, step-by-step instructions for the overall Housing Deficit Estimation process can be found [here](https://github.com/EL-BID/Housing_Deficit/blob/master/Step-by-step%20-%20Housing%20Deficit%20Estimation.pdf). 
+
 
 ## Installation Guide
 The scripts in this repo can be run from R/Rstudio after adjusting the paths of input files. As previously mentioned, QGIS or similar software will be necessary to extract the night lights raster data from the satellite images. 
