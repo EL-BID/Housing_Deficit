@@ -178,3 +178,36 @@ plot(rules_viz, method = "graph", engine = "htmlwidget")
 
 
 
+
+
+
+
+
+# ---------- coefficient of variation: test conditions for model ---------- # 
+
+# Before beginning the predictions, the statistical accuracy of the indicators is measured by a coefficient 
+# of variation (CV). The CV captures the indicators’ dispersion, or how informative the indicator is in 
+# statistical terms. The CV is defined as the standard deviation of the indicator divided by indicator’s mean  
+# multiplied by 100. The lower the CV, the more precise the estimation is. Colombia's DANE defines a scale to 
+# determine how informative or precise a housing indicator is: 
+#            Good precision: CV <7.5
+#      Acceptable precision: 7.5 <= CV <= 15
+#             Low precision: 15 <= CV < 30
+#             Bad precision: 30<= CV
+# We will use the same scale here. 
+
+
+#calculate CV for each indicator
+CV$CV_walls = mean(Census2012$def_wall_mat)*100
+CV$CV_roof = mean(Census2012$def_roof_mat)*100
+CV$CV_overc = mean(Census2012$overcrowding)*100
+CV$CV_water = mean(Census2012$def_water_acc)*100
+CV$CV_sewar = mean(Census2012$def_sewar_acc)*100
+CV$CV_light = mean(Census2012$def_light_acc)*100
+CV$CV_garba = mean(Census2012$def_garba_acc)*100
+CV$CV_cohab = mean(Census2012$cohabitation)*100
+CV$CV_acute = mean(Census2012$acute_overcrowd)*100
+CV
+
+
+
