@@ -198,6 +198,7 @@ plot(rules_viz, method = "graph", engine = "htmlwidget")
 
 
 #calculate CV for each indicator
+CV <- data.frame("value")
 CV$CV_walls = mean(Census2012$def_wall_mat)*100
 CV$CV_roof = mean(Census2012$def_roof_mat)*100
 CV$CV_overc = mean(Census2012$overcrowding)*100
