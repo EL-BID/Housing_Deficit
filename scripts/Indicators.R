@@ -131,6 +131,73 @@ write.csv(indicators_table, file = "Census_indicators_byNDC.csv", row.names=FALS
 
 
 
+# ---------- maps of indicators ---------- # 
+
+#shapefiles --> indicators and types of deficit by adm1
+if (!require("rgdal")) install.packages("rgdal") 
+library(rgdal)
+library(sp)
+
+
+adm2 <- readOGR("C:\\Users\\jfisher\\Documents\\PROJECTS\\Guyana\\Housing Strategy\\Baseline Housing Needs\\Deliverables\\3. Calculations\\Data\\GIS\\Shape\\GUY_adm\\GUY_adm2.shp")
+plot(adm2)
+## check data already embedded in shapefile
+head(adm2@data)
+
+# merge indicators table to shapefile by NDC number 
+## recode column names to match
+colnames(adm2@data)[colnames(adm2@data)=="ID_2"] <- "NDCno"
+
+## now merge data and check the results
+GUY_map <- sp::merge(adm2, indicators_table, by='NDCno')
+head(GUY_map@data)
+plot(GUY_map)
+
+# mapping in detail
+if (!require("sf")) install.packages("sf") 
+library(sf)
+if (!require("tmap")) install.packages("tmap") 
+library(tmap)
+if (!require("rgeos")) install.packages("rgeos") 
+library(rgeos)
+
+## convert shapefile to sf for graphing
+GUY_map2 <- st_as_sf(GUY_map)
+#class(GUY_map2)
+#summary(GUY_map2)
+
+
+tmap_mode('plot')
+
+## qualitative deficit
+tm_shape(GUY_map2) + 
+  tm_polygons("def_quali", border.col="white", 
+                           breaks=seq(0, 1, by=.1), legend.hist=F     # use this line to adjust breaks as necessary, add legend histogram
+  ) + 
+  tm_layout(frame=F, title="Qualitative Deficit by NDC, 2012", title.size = 1.5)
+
+
+## quantitative  deficit
+tm_shape(GUY_map2) + 
+  tm_polygons("def_quanti", border.col="white",
+                           breaks=seq(0, 1, by=.1), legend.hist=F     # use this line to adjust breaks as necessary, add legend histogram
+  ) + 
+  tm_layout(frame=F, title="Quantitative Deficit by NDC, 2012", title.size = 1.5)
+
+
+## deficit access to electric light
+tm_shape(GUY_map2) + 
+  tm_polygons("def_light_acc", border.col="white",
+                           breaks=seq(0, 1, by=.1), legend.hist=F     # use this line to adjust breaks as necessary, add legend histogram
+  ) + 
+  tm_layout(frame=F, title="Deficit Access to Light by NDC, 2012", title.size = 1.5)
+
+
+## additional maps can be added in this way depending on the variables of interest to the analyst
+
+
+
+
 # ---------- association analysis ---------- # 
 
 ## prep data for association analysis
