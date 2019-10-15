@@ -33,7 +33,7 @@ A simple regression is then used to the predict calculated housing deficit based
 ## User Guide
 Adustments to the indicators above should be considered depending on the census data to which it is applied. For example, flooring material is an important indicator of housing quality, but Guyana's census does not collect this information. If this this methodology is applied to a dataset in which floor material data is available, it should be taken into account. 
 
-The night lights data originally used to create these scripts was obtained from satellite images available at the National Oceanic and Atmospheric Association's  [Visible Infrared Imaging Radiometer Suite](https://ngdc.noaa.gov/eog/viirs/download_dnb_composites.html). The raster data from these images - average luminosity per NDC, a small administrative division - was extracted using QGIS and the shapefiles of the NDCs in Guyana. 
+The night lights data originally used to create these scripts was obtained from satellite images available at the National Oceanic and Atmospheric Association's  [Visible Infrared Imaging Radiometer Suite](https://ngdc.noaa.gov/eog/viirs/download_dnb_composites.html) - more recently available through the [Earth Observations Group](https://eogdata.mines.edu/download_dnb_composites.html). The raster data from these images - average luminosity per NDC, a small administrative division - was extracted using QGIS and the shapefiles of the NDCs in Guyana. 
 
 In combination with the NDC shapefiles, the results of the Indiactors.R script and the Predictions.R script can be visualized in QGIS (or similar software), or directly in R, to produce a heat map of deficit that is easily understandable at a glance. 
 
