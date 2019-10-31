@@ -9,9 +9,9 @@ Understanding housing deficit is crucial in creating housing policy. The code co
   <img width="400" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/AAgraph.JPG">
 </p>
 
-In data-scarce environments reliable nation-wide data on housing conditions might only be available once a decade. To overcome this, the repo contains an additional script that will use night lights data extracted from satellite images in order to predict the housing deficit in years where no census data is available.
+In data-scarce environments reliable nation-wide data on housing conditions might only be available once a decade. To overcome this, the repo contains an additional script that will use night lights data extracted from satellite images in order to now-cast the housing deficit in years where no census data is available. More information on the methodology can be found in the [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf). 
 
-More information on the methodology can be found in the [Methodological Report](https://github.com/EL-BID/Housing_Deficit/blob/master/Methodological%20Report%20-%20Housing%20Deficit%20Estimation.pdf). In brief:
+Some countries’ statistical institutions publish a specific set of definitions and methodology for calculating housing deficit within that country, as is the case with Peru , and international bodies such as CEPAL, MINURVI, and UN Habitat provide general guidelines in the absence of a country-specific methodology. In countries where no national methodology exists, this exercise will use a methodology based on UN Habitat and MINURVI guidelines, and the mthodology used by Colombia’s Departamento Administrativo Nacional de Estadística (DANE, the National Statistics Office). In brief:
 
 A household is considered to be experiencing quantitative housing deficit if they are living in either...
    1. Cohabitation (> 1 household living in the same dwelling)
@@ -26,8 +26,13 @@ A household is considered to be experiencing qualitative housing deficit if any 
    6. Access to piped sewerage
    7. Access to sanitary garbage disposal
 
+After cleaning and preparing the data (a process which will be different for each area of study but can be guided by the **Data_prep.R** script), these calculations can be run in the **Inicators.R** script. 
 
-A simple regression is then used to the predict calculated housing deficit based on the average luminosity of each administrative division, with robust results in Guyana's case. 
+Two tests are run on the derived indicators using the **Stat_test.R** script to determine if the prediction methodology will be an appropriate fit for the data in question: 
+   1. Association analysis
+   2. Coefficient of Variance
+
+Then, using satellite imagery data extracted using QGIS (see [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf)) or a complete version of the **DRAFT_luminosity_processing.R** script (which does not yet exist), a simple regression is used to 'predict' (now-cast) housing deficit for the year of most recently available satellite imagery based on the average luminosity of each administrative division. 
 
 
 ## User Guide
@@ -35,14 +40,14 @@ Adustments to the indicators above should be considered depending on the census 
 
 The night lights data originally used to create these scripts was obtained from satellite images available at the National Oceanic and Atmospheric Association's  [Visible Infrared Imaging Radiometer Suite](https://ngdc.noaa.gov/eog/viirs/download_dnb_composites.html) - more recently available through the [Earth Observations Group](https://eogdata.mines.edu/download_dnb_composites.html). The raster data from these images - average luminosity per NDC, a small administrative division - was extracted using QGIS and the shapefiles of the NDCs in Guyana. 
 
-In combination with the NDC shapefiles, the results of the Indiactors.R script and the Predictions.R script can be visualized in QGIS (or similar software), or directly in R, to produce a heat map of deficit that is easily understandable at a glance. 
+The geospatial results of the Indiactors.R script and the Predictions.R script can be visualized in QGIS (or similar software), or directly in R, to produce a heat map of deficit that is easily understandable at a glance. 
 
 
 <p align="center">
   <img width="800" src="https://github.com/EL-BID/Housing_Deficit/blob/master/images/Def_Estimation.JPG">
 </p>
 
-Detailed, step-by-step instructions for the overall Housing Deficit Estimation process can be found [here](https://github.com/EL-BID/Housing_Deficit/blob/master/Step-by-step%20-%20Housing%20Deficit%20Estimation.pdf). 
+Detailed, step-by-step instructions for the overall Housing Deficit Estimation process can be found [here](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf). 
 
 
 ## Installation Guide
@@ -65,17 +70,20 @@ In addition to the basic R/Rstudio software, which must be installed before the 
 
 
 ## How to Contribute
-Questions or suggestions about this project can be directed to Jordan Fischer at <jfisher@iadb.org>. For all contributions to this project, this repository may be forked directly. 
+Questions or suggestions about this project can be directed to Jordan Jasuta Fischer at <jordan.j.fischer@gmail.com>. For all contributions to this project, this repository may be forked directly. 
+
 
 ## Authors
 Code:  [Jordan Jasuta Fischer](https://github.com/jordanjasuta)
 
-Methodology: [Camilo Pecha](http://camilopecha.webflow.io)
+Methodology: [Camilo Pecha](http://camilopecha.webflow.io) and [Jordan Jasuta Fischer](https://github.com/jordanjasuta)
+
 
 ## License
 The Documentation of Support and Use of the software is licensed under Creative Commons IGO 3.0 Attribution-NonCommercial-NoDerivative (CC-IGO 3.0 BY-NC-ND)
 
 The codebase of this repo uses [AM-331-A3 Software License](https://github.com/IDB-HUD/Housing_Deficit/blob/master/LICENSE.md).
+
 
 ## Limitation of responsibilities
 The IDB is not responsible, under any circumstance, for damage or compensation, moral or patrimonial; direct or indirect; accessory or special; or by way of consequence, foreseen or unforeseen, that could arise:
