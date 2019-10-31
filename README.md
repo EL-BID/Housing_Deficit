@@ -3,15 +3,11 @@
 # Housing Deficit Estimation
 
 ## Description and Context
-Understanding housing deficit is crucial in creating housing policy. The code contained in this repo will apply a decisive methodology to determine levels of quantitative, qualitative, and total housing deficit based on census data, using Guyana's census data as an example. An association analysis is applied to indicators causing deficit to highlight patterns among sub-optimal conditions - for example, Guyanese households lacking access to electricity are 64% more likely to also lack adequate sewerage, suggesting that lack of access to utilities and infrastructure often go hand-in-hand. 
-
-<p align="center">
-  <img width="400" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/AAgraph.JPG">
-</p>
+Understanding housing deficit is crucial in creating housing policy. The code contained in this repo will apply a decisive methodology to determine levels of quantitative, qualitative, and total housing deficit based on census data, using census data as an example. 
 
 In data-scarce environments reliable nation-wide data on housing conditions might only be available once a decade. To overcome this, the repo contains an additional script that will use night lights data extracted from satellite images in order to now-cast the housing deficit in years where no census data is available. More information on the methodology can be found in the [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf). 
 
-Some countries’ statistical institutions publish a specific set of definitions and methodology for calculating housing deficit within that country, as is the case with Peru , and international bodies such as CEPAL, MINURVI, and UN Habitat provide general guidelines in the absence of a country-specific methodology. In countries where no national methodology exists, this exercise will use a methodology based on UN Habitat and MINURVI guidelines, and the mthodology used by Colombia’s Departamento Administrativo Nacional de Estadística (DANE, the National Statistics Office). In brief:
+Some countries’ statistical institutions publish a specific set of definitions and methodology for calculating housing deficit within that country, as is the case with Peru, and international bodies such as [CEPAL](https://www.cepal.org/es), [MINURVI](https://www.minurvi.org/), and [UN Habitat](http://unhabitat.org/un-habitat-at-a-glance/) provide general guidelines in the absence of a country-specific methodology. In countries where no national methodology exists, this exercise will use a methodology based on UN Habitat and MINURVI guidelines, and the mthodology used by Colombia’s [Departamento Administrativo Nacional de Estadística](https://www.dane.gov.co/) (DANE, the National Statistics Office). In brief:
 
 A household is considered to be experiencing quantitative housing deficit if they are living in either...
    1. Cohabitation (> 1 household living in the same dwelling)
@@ -26,13 +22,19 @@ A household is considered to be experiencing qualitative housing deficit if any 
    6. Access to piped sewerage
    7. Access to sanitary garbage disposal
 
-After cleaning and preparing the data (a process which will be different for each area of study but can be guided by the **Data_prep.R** script), these calculations can be run in the **Inicators.R** script. 
+After cleaning and preparing the data (a process which will be different for each area of study but can be guided by the **Data_prep.R** script), these calculations can be run in the **Indicators.R** script. 
 
 Two tests are run on the derived indicators using the **Stat_test.R** script to determine if the prediction methodology will be an appropriate fit for the data in question: 
    1. Association analysis
    2. Coefficient of Variance
 
-Then, using satellite imagery data extracted using QGIS (see [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf)) or a complete version of the **DRAFT_luminosity_processing.R** script (which does not yet exist), a simple regression is used to 'predict' (now-cast) housing deficit for the year of most recently available satellite imagery based on the average luminosity of each administrative division. 
+The association analysis patterns among the causes of sub-optimal conditions - for example, Guyanese households lacking access to electricity are 64% more likely to also lack adequate sewerage, suggesting that lack of access to utilities and infrastructure often go hand-in-hand. 
+
+<p align="center">
+  <img width="400" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/AAgraph.JPG">
+</p>
+
+Then, using satellite imagery data extracted using QGIS (see [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf)) or a complete version of the **DRAFT_luminosity_processing.R** script (which does not yet exist), a simple regression is used in the **Predictions.R** script to 'predict' (now-cast) housing deficit for the year of most recently available satellite imagery based on the average luminosity of each administrative division. 
 
 
 ## User Guide
@@ -40,7 +42,7 @@ Adustments to the indicators above should be considered depending on the census 
 
 The night lights data originally used to create these scripts was obtained from satellite images available at the National Oceanic and Atmospheric Association's  [Visible Infrared Imaging Radiometer Suite](https://ngdc.noaa.gov/eog/viirs/download_dnb_composites.html) - more recently available through the [Earth Observations Group](https://eogdata.mines.edu/download_dnb_composites.html). The raster data from these images - average luminosity per NDC, a small administrative division - was extracted using QGIS and the shapefiles of the NDCs in Guyana. 
 
-The geospatial results of the Indiactors.R script and the Predictions.R script can be visualized in QGIS (or similar software), or directly in R, to produce a heat map of deficit that is easily understandable at a glance. 
+The geospatial results of the **Indicators.R** script and the **Predictions.R** script can be visualized in QGIS (or similar software), or directly in R, to produce a heat map of deficit that is easily understandable at a glance. 
 
 
 <p align="center">
@@ -58,15 +60,16 @@ All input data should be housed in the same folder with the R scripts. The worki
 
 In addition to the basic R/Rstudio software, which must be installed before the scripts can be opened or run, the following modules will be installed in the process of running the scripts:
 
-`<readstata13>`   *...this is necessary to read Guyana's census data; this may not be necessary for other census data* 
-
-`<tidyverse>`     *...if the install of this package fails, you may need to update your version of R* 
-
+`<readstata13>`   *........this is necessary to read Guyana's census data; this may not be necessary for other census data* 
+`<tidyverse>`     *........if the install of this package fails, you may need to update your version of R* 
+`<dplyr>`
 `<arules>`
-
 `<arulesViz>`
-
-`<ggplot2>`
+`<rgdal>`
+`<sp>`
+`<sf>`
+`<tmap>`
+`<rgeos>`
 
 
 ## How to Contribute
