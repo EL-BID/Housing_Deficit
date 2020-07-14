@@ -1,4 +1,5 @@
 <img align="right" width="115" height="49" src="https://github.com/EL-BID/Modelo-de-prediccion-de-crecimiento-urbano-/blob/master/img/IDB_logo.jpg">
+[![Analytics](https://gabeacon.irvinlim.com/UA-4677001-16/Housing_Deficit/readme?useReferer)](https://github.com/EL-BID/Housing_Deficit/)
 
 # Housing Deficit Estimation
 
