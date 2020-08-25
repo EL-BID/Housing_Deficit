@@ -23,9 +23,9 @@ A household is considered to be experiencing qualitative housing deficit if any 
    6. Access to piped sewerage
    7. Access to sanitary garbage disposal
 
-After cleaning and preparing the data (a process which will be different for each area of study but can be guided by the **Data_prep.R** script), these calculations can be run in the **Indicators.R** script. 
+After cleaning and preparing the data (a process which will be different for each area of study but can be guided by **`script1_Data_prep.R`**), these calculations can be run in an adjusted version of **`script2_Indicators.R`**. 
 
-Two tests are run on the derived indicators using the **Stat_test.R** script to determine if the prediction methodology will be an appropriate fit for the data in question: 
+Two tests are run on the derived indicators using **`script3_Stat_test.R`** to determine if the prediction methodology will be an appropriate fit for the data in question: 
    1. Association analysis
    2. Coefficient of Variance
 
@@ -35,22 +35,29 @@ The association analysis patterns among the causes of sub-optimal conditions - f
   <img width="400" src="https://github.com/IDB-HUD/Housing_Deficit/blob/master/images/AAgraph.JPG">
 </p>
 
-Then, using satellite imagery data extracted using QGIS (see [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf)) or a complete version of the **DRAFT_luminosity_processing.R** script (which does not yet exist), a simple regression is used in the **Predictions.R** script to 'predict' (now-cast) housing deficit for the year of most recently available satellite imagery based on the average luminosity of each administrative division. 
+Then, using satellite imagery data extracted using QGIS (see [Housing Deficit Methodology and Guide](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf)) or **`script4_Luminosity.R`**, a simple regression is used in **`script5_Predictions.R`** to 'predict' (now-cast) housing deficit for the year of most recently available satellite imagery based on the average luminosity of each administrative division. 
 
 
 ## User Guide
-Adustments to the indicators above should be considered depending on the census data to which it is applied. For example, flooring material is an important indicator of housing quality, but Guyana's census does not collect this information. If this this methodology is applied to a dataset in which floor material data is available, it should be taken into account. 
+This analysis is run across 5 scripts: 
+1. script1_Data_prep.R
+2. script2_Indicators.R
+3. script3_Stat_test.R
+4. script4_Luminosity.R
+5. script5_Prediction.R
+
+All scripts can be run at once using the **`Master_script.R`**. Adustments to the indicators above should be considered depending on the census data to which it is applied. For example, flooring material is an important indicator of housing quality, but Guyana's census does not collect this information. If this this methodology is applied to a dataset in which floor material data is available, it should be taken into account. 
 
 The night lights data originally used to create these scripts was obtained from satellite images available at the National Oceanic and Atmospheric Association's  [Visible Infrared Imaging Radiometer Suite](https://ngdc.noaa.gov/eog/viirs/download_dnb_composites.html) - more recently available through the [Earth Observations Group](https://eogdata.mines.edu/download_dnb_composites.html). The raster data from these images - average luminosity per NDC, a small administrative division - was extracted using QGIS and the shapefiles of the NDCs in Guyana. 
 
-The geospatial results of the **Indicators.R** script and the **Predictions.R** script can be visualized in QGIS (or similar software), or directly in R, to produce a heat map of deficit that is easily understandable at a glance. 
+The geospatial results of **`script2_Indicators.R`** and the **`script5_Predictions.R`** can be visualized in QGIS (or similar software), or directly in R, to produce a heat map of deficit that is easily understandable at a glance. 
 
 
 <p align="center">
   <img width="800" src="https://github.com/EL-BID/Housing_Deficit/blob/master/images/Def_Estimation.JPG">
 </p>
 
-Detailed, step-by-step instructions for the overall Housing Deficit Estimation process can be found [here](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf). 
+Detailed, explanation and instructions for the overall Housing Deficit Estimation process can be found [here](https://github.com/EL-BID/Housing_Deficit/blob/master/Housing%20Deficit%20-%20Methodology%20and%20Guide.pdf). 
 
 
 ## Installation Guide
