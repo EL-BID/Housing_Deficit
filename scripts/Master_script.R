@@ -5,8 +5,8 @@
 ##           for the Housing and Urban Development Division of the Inter-American Development Bank
 
 ## This script will run the *entire analysis* - data prep, indicator calculation, luminosity data extraction,
-## and deficit prediction/now-casting. To run, highlight alll the lines below for the appropriate operating 
-## system and click Run. This will run all 4 scripts for the analysis and save the data in the corresponding 
+## and deficit prediction/now-casting. To run, update the working directory in line 14, highlight all the lines 
+## below and click Run. This will run all 4 scripts for the analysis and save the data in the corresponding 
 ## folders. To see specific visualizations you may need to enter the specific script and reproduce manually.
 
 
