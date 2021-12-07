@@ -1,7 +1,8 @@
 <img align="right" width="115" height="49" src="https://github.com/EL-BID/Modelo-de-prediccion-de-crecimiento-urbano-/blob/master/img/IDB_logo.jpg">
 
 # Housing Deficit Estimation
-[![Analytics](https://gabeacon.irvinlim.com/UA-4677001-16/Housing_Deficit/readme?useReferer)](https://github.com/EL-BID/Housing_Deficit/)
+![analytics image (flat)](https://raw.githubusercontent.com/vitr/google-analytics-beacon/master/static/badge-flat.gif)
+![analytics](https://www.google-analytics.com/collect?v=1&cid=555&t=pageview&ec=repo&ea=open&dp=/Housing_Deficit/readme&dt=&tid=UA-4677001-16)
 
 ## Description and Context
 Understanding housing deficit is crucial in creating housing policy. The code contained in this repo will apply a decisive methodology to determine levels of quantitative, qualitative, and total housing deficit based on census data, using census data as an example. 
